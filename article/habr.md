@@ -92,6 +92,9 @@ b2 01 34 34 20 0e 00 00 ...
 
 ## Акт 3. Лезем в клавиатуру
 
+![Лупа над радиомодулем KCH_KB1](https://raw.githubusercontent.com/Quatrolol/k2he-radio-update/main/article/img/investigation.jpg)
+*Иллюстрация сгенерирована нейросетью.*
+
 С кабелем есть нюанс. Если переключатель стоит в BT или 2.4G, кабель только заряжает клавиатуру, и никакого HID по нему нет. Переводим в положение USB, и появляется raw HID интерфейс с usage page `0xFF60`: 32-байтные репорты, тот же канал, что использует VIA.
 
 Протокол описан в исходниках. У Keychron есть публичный форк QMK (`Keychron/qmk_firmware`, ветка `2025q3`), и в `keyboards/keychron/common/keychron_raw_hid.h` лежит перечисление команд:
